@@ -1,0 +1,10 @@
+name: astrbot_plugin_jmcomic
+display_name: JMComic 文件下载
+desc: 在 OneBot v11 接入下，通过聊天指令提交 JMComic 本子编号，由服务端下载并返回 PDF 文件。
+short_desc: 输入本子编号，返回 PDF 文件。
+version: v0.1.0
+author: a1131861926-crypto
+repo: "https://github.com/a1131861926-crypto/astrbot_plugin_jmcomic"
+support_platforms:
+  - aiocqhttp
+astrbot_version: ">=4.16,<5"

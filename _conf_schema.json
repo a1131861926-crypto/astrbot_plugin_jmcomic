@@ -1,0 +1,68 @@
+{
+  "download_root": {
+    "description": "下载与成品文件保存目录",
+    "type": "string",
+    "default": "data/jmcomic",
+    "hint": "建议保存在 AstrBot 的 data 目录下，避免插件更新时丢失。"
+  },
+  "client_impl": {
+    "description": "JMComic 客户端实现",
+    "type": "string",
+    "default": "api",
+    "options": ["api", "html"],
+    "hint": "api 通常兼容性更好；html 可能受地区和域名可用性影响。"
+  },
+  "proxy": {
+    "description": "网络代理",
+    "type": "string",
+    "default": "system",
+    "hint": "示例：system、null、clash、v2ray、127.0.0.1:7890。"
+  },
+  "image_suffix": {
+    "description": "下载图片转换后缀",
+    "type": "string",
+    "default": ".jpg",
+    "options": [".jpg", ".png", ".webp"],
+    "hint": "下载后的图片会统一转换为该格式。"
+  },
+  "output_format": {
+    "description": "上传文件格式",
+    "type": "string",
+    "default": "pdf",
+    "options": ["pdf", "zip"],
+    "hint": "pdf 会将页面合并为一个 PDF；zip 会打包原始图片。"
+  },
+  "upload_filename_mode": {
+    "description": "上传显示文件名模式",
+    "type": "string",
+    "default": "random",
+    "options": ["random", "timestamp", "original"],
+    "hint": "仅控制聊天里显示的文件名。本地成品文件仍保留 JM 编号，方便排查。"
+  },
+  "upload_filename_prefix": {
+    "description": "上传显示文件名前缀",
+    "type": "string",
+    "default": "document",
+    "hint": "用于 random 和 timestamp 模式。只保留字母、数字、下划线和连字符。"
+  },
+  "max_file_mb": {
+    "description": "允许发送的最大文件大小 MB",
+    "type": "int",
+    "default": 100,
+    "hint": "超过限制时只保留本地文件，不发送。填 0 表示不限制。"
+  },
+  "remove_images_after_pack": {
+    "description": "生成成品文件后删除原始图片",
+    "type": "bool",
+    "default": true,
+    "hint": "开启后仅保留最终 PDF 或 zip 文件，以节省磁盘空间。"
+  },
+  "extra_option_yaml": {
+    "description": "追加 jmcomic option YAML 配置",
+    "type": "text",
+    "default": "",
+    "editor_mode": true,
+    "editor_language": "yaml",
+    "hint": "高级用法：可追加 cookies、域名、插件等 jmcomic 配置项。"
+  }
+}
